@@ -28,6 +28,7 @@ function App() {
           <Route path={"wisata/statistik"} element={<MyChart/>}/>
         </Route>
       <Route path={"/pesan-tiket"} element={<PesanWisata/>}/>
+      <Route path={"/try"} element={<Try/>}/>
 
       </Routes>
 

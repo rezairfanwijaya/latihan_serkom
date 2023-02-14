@@ -1010,10 +1010,6 @@ input[type="range"]::-ms-fill-lower {
   display: inline-flex;
 }
 
-.table {
-  display: table;
-}
-
 .hidden {
   display: none;
 }
@@ -1164,22 +1160,13 @@ input[type="range"]::-ms-fill-lower {
   padding: 1.25rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
+.p-10 {
+  padding: 2.5rem;
 }
 
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
-}
-
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
 }
 
 .px-2 {
