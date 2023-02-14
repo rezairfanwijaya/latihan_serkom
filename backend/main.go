@@ -34,14 +34,18 @@ func main() {
 	r := gin.Default()
 	r.Use(cors.Default())
 
+	// wisata
 	r.POST("/wisata", handlerWisata.SaveWisata)
-	r.POST("/reservasi", handlerReservasi.SaveReservasi)
-	r.GET("/reservasi/statistik", handlerReservasi.GetStatistikPengunjung)
 	r.GET("/wisata", handlerWisata.GetAllWisata)
 	r.GET("/wisata/:id", handlerWisata.GetByID)
 	r.GET("/wisatas/:name", handlerWisata.GetByName)
-	r.DELETE("/wisata/:id", handlerWisata.DeleteWisata)
 	r.PUT("/wisata/:id", handlerWisata.UpdateWisata)
+	r.DELETE("/wisata/:id", handlerWisata.DeleteWisata)
+
+	// reservasi
+	r.POST("/reservasi", handlerReservasi.SaveReservasi)
+	r.GET("/reservasi", handlerReservasi.GetAllReservasis)
+	r.GET("/reservasi/statistik", handlerReservasi.GetStatistikPengunjung)
 
 	r.POST("/login", handlerAdmin.Login)
 

@@ -78,5 +78,28 @@ func (h *handlerReservasi) GetStatistikPengunjung(c *gin.Context) {
 	)
 
 	c.JSON(http.StatusOK, response)
-	return
+}
+
+func (h *handlerReservasi) GetAllReservasis(c *gin.Context) {
+	reservasis, err := h.serviceReservasi.FindAll()
+	if err != nil {
+		response := helper.ResponseAPI(
+			"gagal",
+			"gagal mengambil reservasi",
+			http.StatusInternalServerError,
+			err.Error(),
+		)
+
+		c.JSON(http.StatusInternalServerError, response)
+		return
+	}
+
+	response := helper.ResponseAPI(
+		"sukses",
+		"sukses mengambil reservasi",
+		http.StatusOK,
+		reservasis,
+	)
+
+	c.JSON(http.StatusOK, response)
 }

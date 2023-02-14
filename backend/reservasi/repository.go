@@ -34,7 +34,7 @@ func (r *repository) FindAll() ([]Reservasi, error) {
 
 func (r *repository) GetTotalPengunjung() (TotalPengunjung, error) {
 	var totalPengunjung TotalPengunjung
-	
+
 	if err := r.db.Raw("SELECT SUM(pengunjung_dewasa) as total_pengunjung_dewasa, SUM(pengunjung_anak) as total_pengunjung_anak FROM reservasis").Scan(&totalPengunjung).Error; err != nil {
 		return totalPengunjung, err
 	}

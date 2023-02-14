@@ -7,6 +7,7 @@ import (
 type IService interface {
 	CreateReservasi(input InputNewReservasi) error
 	GetTotalPengunjung() (TotalPengunjung, error)
+	FindAll() ([]Reservasi, error)
 }
 
 type service struct {
@@ -52,4 +53,13 @@ func (s *service) GetTotalPengunjung() (TotalPengunjung, error) {
 
 	return totalPengunjung, nil
 
+}
+
+func (s *service) FindAll() ([]Reservasi, error) {
+	reservasis, err := s.repoReservasi.FindAll()
+	if err != nil {
+		return reservasis, err
+	}
+
+	return reservasis, nil
 }
